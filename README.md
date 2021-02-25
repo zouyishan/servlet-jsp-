@@ -13,8 +13,3 @@
 
 ### 忘记密码
 ![忘记密码](https://ae01.alicdn.com/kf/H345d8ad854dc47b1a50630a0096864adz.jpg)
-
-### 开发界面：
-![开发界面](https://ae01.alicdn.com/kf/H3b33dbfa997348959ee19a7ea4e88dc39.jpg)
-
-拦截器也有，然后忘记密码也完善了
