@@ -14,20 +14,13 @@ import java.util.Properties;
 
 public class DruidUtils {
 
-    //创建连接池对象
     private static DataSource dataPool = null;
-    //创建流对象
     private static InputStream input = null;
     private static Properties prop = null;
 
-    //因为这个只需要初始化一次,
-    // 所以通过静态代码块加载配置文件,初始化连接池对象
     static {
         prop = new Properties();
-        //读取配置文件
-        //System.out.println("1");
         input = DruidUtils.class.getClassLoader().getResourceAsStream("druid.properties");
-        //System.out.println("2");
         try {
             prop.load(input);
             //System.out.println("3");
@@ -40,13 +33,9 @@ public class DruidUtils {
         }
     }
 
-    //获取数据库连接的方法
     public static Connection getConnection() {
-        //获取数据库连接对象
-        //System.out.println("到这个函数了");
         Connection conn = null;
         try {
-            //System.out.println("为什么这个没执行呢");
             conn = dataPool.getConnection();
         } catch (SQLException e) {
             e.printStackTrace();
