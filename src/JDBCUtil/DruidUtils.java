@@ -23,9 +23,7 @@ public class DruidUtils {
         input = DruidUtils.class.getClassLoader().getResourceAsStream("druid.properties");
         try {
             prop.load(input);
-            //System.out.println("3");
             dataPool = DruidDataSourceFactory.createDataSource(prop);
-            //System.out.println("4");
         } catch (IOException e) {
             e.printStackTrace();
         } catch (Exception e) {
@@ -40,19 +38,15 @@ public class DruidUtils {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        //System.out.println("到这了");
         return conn;
     }
 
-    //获取数据库连接池的方法
     public static DataSource getDataSource() {
         return dataPool;
     }
 
 
     public static void close(ResultSet resultSet, Statement stmt, Connection conn) {
-        //System.out.println("到close了");
-        //不为空则归还到连接池中.
         if (resultSet != null) {
             try {
                 resultSet.close();
@@ -75,10 +69,7 @@ public class DruidUtils {
             }
         }
     }
-    //释放资源
     public static void close(Statement statement, Connection connection) {
         close(null, statement, connection);
     }
-
-
 }
